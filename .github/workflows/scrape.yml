@@ -1,0 +1,54 @@
+name: Scrape CGVS Asylum Statistics
+
+on:
+  # Run monthly on the 1st day of each month at 9:00 AM UTC
+  schedule:
+    - cron: '0 9 1 * *'
+  
+  # Allow manual triggering for testing
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Required to commit and push changes
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Use token for authentication to allow pushing
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Git configuration
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl
+      
+      - name: Run CGVS scraper
+        run: |
+          chmod +x ./scrape.sh
+          ./scrape.sh
+      
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git add .
+          git commit -m "Automated update of CGVS asylum statistics - $(date +'%Y-%m-%d')"
+          git push origin main
