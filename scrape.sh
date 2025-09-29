@@ -1,15 +1,10 @@
 #!/bin/bash
 
-# CGVS Asylum Statistics Scraper
-# Fetches and extracts asylum seeker counts from CGVS website
-
-set -euo pipefail  # Exit on error, undefined variables, and pipe failures
-
 # Configuration
-MONTH="januari"  # January in Dutch
+MONTH="januari"
 YEAR="2020"
 OUTPUT_FILE="cgvs-figures.csv"
-URL="https://www.cgvs.be/nl/actueel/asielstatistieken-${MONTH}-${YEAR}.html"
+URL="https://www.cgvs.be/nl/actueel/asielstatistieken-${MONTH}-${YEAR}"
 
 echo "Starting CGVS scraper for ${MONTH} ${YEAR}..."
 
@@ -26,31 +21,13 @@ fi
 echo "Successfully fetched HTML content"
 
 # Step 2: Extract the number of asylum seekers
-# Pattern varies by month, let's be more flexible with the extraction
 echo "Extracting asylum seeker count..."
 
-# Use sed to extract the number from the specific pattern
-# Looking for the pattern and extracting the number between "DVZ " and " verzoekers"
-# Try multiple patterns to handle different HTML structures
-
-# Pattern 1: With <strong> tags
-ASYLUM_COUNT=$(echo "$HTML_CONTENT" | sed -n 's/.*registreerde de DVZ <strong>\([0-9.]*\)<\/strong> verzoekers om internationale bescherming.*/\1/p')
-
-# Pattern 2: Without <strong> tags (fallback)
-if [ -z "$ASYLUM_COUNT" ]; then
-    ASYLUM_COUNT=$(echo "$HTML_CONTENT" | sed -n 's/.*registreerde de DVZ \([0-9.]*\) verzoekers om internationale bescherming.*/\1/p')
-fi
-
-# Pattern 3: Alternative HTML structure (more flexible)
-if [ -z "$ASYLUM_COUNT" ]; then
-    ASYLUM_COUNT=$(echo "$HTML_CONTENT" | grep -o "registreerde de DVZ [^0-9]*\([0-9.]*\)" | sed 's/.*\([0-9.]*\).*/\1/')
-fi
+ASYLUM_COUNT=$(echo "$HTML_CONTENT" | sed -n "s/<li>In $MONTH registreerde de DVZ <strong>\([0-9]\{1,3\}\.[0-9]\{1,3\}\) <\/strong>verzoekers om internationale bescherming. Elke persoon (ook kinderen) wordt apart geteld.<\/li>/\1/p")
 
 # Check if we successfully extracted a number
 if [ -z "$ASYLUM_COUNT" ]; then
     echo "Error: Could not extract asylum seeker count from HTML"
-    echo "HTML content preview:"
-    echo "$HTML_CONTENT" | grep -i "registreerde de DVZ" || echo "Pattern not found in HTML"
     exit 1
 fi
 
@@ -83,8 +60,8 @@ git add "$OUTPUT_FILE"
 if git diff --staged --quiet; then
     echo "No changes to commit"
 else
-    # Commit the changes
-    git commit -m "Add asylum statistics for ${MONTH} ${YEAR}: ${ASYLUM_COUNT} asylum seekers"
+    # Commit the changes?
+    git commit -m "Add asylum statistics for ${MONTH} ${YEAR}"
     
     # Push to main branch
     git push origin main
