@@ -36,9 +36,13 @@ jobs:
         run: |
           chmod +x ./scrape.sh
           ./scrape.sh
-      
+          
       - name: Commit and push changes
         run: |
           git add .
-          git commit -m "Automated update of CGVS asylum statistics - $(date +'%Y-%m-%d')"
-          git push origin main
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Automated update of CGVS asylum statistics - $(date +'%Y-%m-%d')"
+            git push origin main
+          fi
