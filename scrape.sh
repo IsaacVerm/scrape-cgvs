@@ -6,7 +6,7 @@ OUTPUT_FILE="cgvs-figures.csv"
 # Dutch month names
 MONTHS=("januari" "februari" "maart" "april" "mei" "juni" "juli" "augustus" "september" "oktober" "november" "december")
 
-echo "Starting CGVS scraper for all months from January 2020 to September 2025..."
+echo "Starting CGVS scraper."
 
 # Create CSV header if file doesn't exist
 if [ ! -f "$OUTPUT_FILE" ]; then
