@@ -46,7 +46,7 @@ for YEAR in {2020..2025}; do
         fi
         
         # Step 2: Extract the number of asylum seekers
-        ASYLUM_COUNT=$(echo "$HTML_CONTENT" | sed -n "s/<li>In $MONTH registreerde de DVZ <strong>\([0-9]\{1,3\}\.[0-9]\{1,3\}\) <\/strong>verzoekers om internationale bescherming. Elke persoon (ook kinderen) wordt apart geteld.<\/li>/\1/p")
+        ASYLUM_COUNT=$(echo "$HTML_CONTENT" | sed -n "s/.*In $MONTH $YEAR registreerde de DVZ <strong>\([0-9.]*\)<\/strong> verzoekers.*/\1/p")
         
         # Check if we successfully extracted a number
         if [ -z "$ASYLUM_COUNT" ]; then
