@@ -1,6 +1,7 @@
 # Temporary files
 *.tmp
 *_test.sh
+*.backup
 
 # Log files
 *.log
