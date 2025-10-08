@@ -22,6 +22,9 @@ FAIL_COUNT=0
 for YEAR in {2020..2025}; do
     # Loop through all months
     for MONTH_INDEX in {0..11}; do
+        # wait for 2 seconds (robots.txt CGVS asks for 2 seconds but 5 to be on the safe site)
+        sleep 2
+
         MONTH="${MONTHS[$MONTH_INDEX]}"
         
         # Stop at September 2025 (month index 8)
