@@ -51,10 +51,27 @@ All of these steps are done in a GitHub Actions Workflow running on a monthly ba
 
 ### Extract values
 
-`sed` to extract the number of requesters.
+We use `sed` to extract values from the HTML pages.
 
-One line in the HTML page says "In augustus 2025 registreerde de DVZ 2.895 verzoekers om internationale bescherming.".
-I want to extract the number (in this case 2.895) from this line.
+The `scrape.sh` script is quite long but the `sed` part is the true heart of the script.
+Take for example how we extract the count of asylum seekers:
+
+```
+ASYLUM_COUNT=$(echo "$HTML_CONTENT" | sed -En 's/.*registreerde de DVZ <strong>([0-9]*(\.[0-9]*)?).*/\1/p')
+```
+
+`-E` stands for extended regular expressions and makes sure we don't have to escape parentheses.
+You can juste write `(` or `)` instead of `\(` or `\/`.
+In itself this is nothing shocking, but lots of escaped parentheses one after another on the same line is simply unreadable.
+
+The text part, "registreerde de DVZ..." in this case, isn't strictly necessary but I've added it to make clear what phrase we're aiming for. If not the regular expression becomes very generic and hard to debug.
+
+The capturing group `([0-9]*(\.[0-9]*)?)` matches both numbers with and without a dot.
+In this case for example both 300 and 3.000 will be matched.
+This is required because sometimes the number of asylum seekers by month is less than 1000.
+
+`\1` is a reference to the captured group.
+Together with the `-n` argument and the `p` option at the end we replace the entire matched line of HTML with the extracted value.
 
 ### Save values in CSV
 
