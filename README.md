@@ -104,3 +104,7 @@ Just some basic regular expressions are enough to extract the data we need.
 - can be run on a regular basis using `cron`
 - no need to setup infrastructure
 - public data so no GitHub privacy concerns
+
+## CGVS allows scraping
+
+The [CGVS robots.txt file](https://www.cgvs.be/robots.txt) asks to respect a [crawl delay between requests](https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt) of 2 seconds.
