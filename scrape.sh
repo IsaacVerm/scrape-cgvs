@@ -10,7 +10,7 @@ echo "Starting CGVS scraper."
 
 # Create CSV header if file doesn't exist
 if [ ! -f "$OUTPUT_FILE" ]; then
-    echo "month,year,count_applicants_international_protection,top_10_nationalities_applicants_international_protection" > "$OUTPUT_FILE"
+    echo "month,year,count_applicants_international_protection,top_10_nationalities_applicants_international_protection,count_cgvs_decisions" > "$OUTPUT_FILE"
     echo "Created new CSV file with headers"
 fi
 
@@ -51,6 +51,7 @@ for YEAR in {2020..2025}; do
         # Step 2: extract values needed from HTML
         COUNT_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/.*registreerde de DVZ.<strong>([0-9]*(\.[0-9]*)?).*/\1/p')
         TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/<li>([A-Z].*)staan in .* bovenaan de top 10.*\. (.*)vervolledigen de top 10.*/"\1,\2"/p')
+        COUNT_CGVS_DECISIONS=$(echo "$HTML_CONTENT" | sed -En 's/.*In .* nam het CGVS <strong>([0-9]*(\.[0-9]*)?) <\/strong>beslissingen.*/\1/p')
         
         # Check if we successfully extracted a number
         if [ -z "$COUNT_APPLICANTS_INTERNATIONAL_PROTECTION" ]; then
@@ -62,7 +63,7 @@ for YEAR in {2020..2025}; do
         echo "Extracted count applicants international protection: $COUNT_APPLICANTS_INTERNATIONAL_PROTECTION"
         
         # Step 3: Save to CSV
-        echo "${MONTH},${YEAR},${COUNT_APPLICANTS_INTERNATIONAL_PROTECTION},${TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION}" >> "$OUTPUT_FILE"
+        echo "${MONTH},${YEAR},${COUNT_APPLICANTS_INTERNATIONAL_PROTECTION},${TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION},${COUNT_CGVS_DECISIONS}" >> "$OUTPUT_FILE"
         echo "Data saved to $OUTPUT_FILE"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
     done
