@@ -1,16 +1,1 @@
-# Temporary files
-*.tmp
-*_test.sh
-*.backup
-
-# Log files
-*.log
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+test.csv
