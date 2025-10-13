@@ -1,0 +1,64 @@
+month,month_id,year,count_applicants_international_protection,top_10_nationalities_applicants_international_protection,count_cgvs_decisions,workload,date_id
+januari,01,2020,2.739,"Syrië, Afghanistan en El Salvador ,Irak, Turkije, Eritrea, Guinee, Congo (DRC), Palestina en Rusland ",1.280,11.183,20200101
+februari,02,2020,1.990,"Afghanistan, El Salvador en Syrië ,Irak, Eritrea, Guinee, Turkije, Palestina, Rusland en Albanië ",1.609,11.920,20200201
+maart,03,2020,1.116,"Afghanistan, El Salvador en Syrië ,Turkije, Guinee, Somalië, Georgië, Palestina, Irak, Congo (DRC) ",1.384,12.730,20200301
+april,04,2020,236,"Afghanistan, Syrië, Colombia en Palestina ,Irak, Turkije, Venezuela, Marokko, Somalië en Albanië ",1.657,11.348,20200401
+mei,05,2020,389,"Afghanistan, Irak, Guinee en Syrië ,Palestina, Turkije, Burundi, Kameroen, Congo (DRC) en Somalië ",896,10.671,20200501
+juni,06,2020,623,"Afghanistan, Irak, Syrië ,Guinee, Somalië, Albanië, Palestina, Congo (DRC), Kameroen en Venezuela ",594,10.822,20200601
+juli,07,2020,820,"Afghanistan, Syrië en Eritrea ,Irak, Palestina, Moldavië, Turkije, Guinee, Somalië en Congo (DRC) ",700,11.171,20200701
+augustus,08,2020,1.270,"Afghanistan, Syrië en Guinee ,Palestina, Somalië, Brazilië, Turkije, Congo (DRC), Eritrea en Irak ",741,11.684,20200801
+september,09,2020,1.961,"Afghanistan, Syrië en Turkije ,Palestina, Irak, Somalië, Albanië, Eritrea, Guinee en Congo (DRC) ",1.087,12.129,20200901
+oktober,10,2020,1.716,"Afghanistan, Brazilië en Syrië ,Somalië, Eritrea, Palestina, Irak, Albanië, Guinee en Turkije ",1.309,12.912,20201001
+november,11,2020,2.014,"Afghanistan, Syrië en Somalië ,Eritrea, Irak, Palestina, Guinee, Turkije, Albanië en Brazilië ",1.097,13.169,20201101
+januari,01,2021,1.377,"Afghanistan, Eritrea en Syrië ,Palestina, Somalië, Irak, Guinee, Onbepaald, Albanië en Kameroen ",1.132,13.830,20210101
+februari,02,2021,1.422,"Afghanistan, Eritrea en Syrië ,Palestina, Guinee, Onbepaald, Irak, Somalië, Georgië en Congo (DRC) ",1.577,14.462,20210201
+maart,03,2021,1.653,"Afghanistan, Syrië en Palestina ,Guinee, Eritrea, Somalië, Irak,  Onbepaald, El Salvador en Albanië ",1.637,15.723,20210301
+april,04,2021,1.585,"Afghanistan, Eritrea en Syrië ,Somalië, Irak,  Palestina, Onbepaald, El Salvador, Moldavië en Guinee ",1.635,15.952,20210401
+mei,05,2021,1.462,"Afghanistan, Syrië en Eritrea ,Palestina, Irak, Guinee, Somalië, Kameroen, Turkije en Albanië ",1.428,15.872,20210501
+juni,06,2021,1.927,"Afghanistan, Palestina en Eritrea ,Syrië, Somalië, Irak, Guinee, El Salvador, Moldavië en Turkije ",1.717,16.204,20210601
+juli,07,2021,2.118,"Afghanistan, Syrië en Eritrea ,Palestina, Somalië, Irak, Turkije, Georgië, Burundi en Guinee ",1.552,15.791,20210701
+augustus,08,2021,2.859,"Afghanistan, Syrië en Eritrea ,Somalië, Palestina, Irak, Turkije, Albanië, Georgië en Guinee ",1.386,15.351,20210801
+september,09,2021,3.089,"Afghanistan, Syrië en Palestina ,Somalië, Eritrea, Albanië, Irak, Moldavië, China en Turkije ",1.459,15.772,20210901
+oktober,10,2021,2.392,"Afghanistan, Palestina en Syrië ,Eritrea, Somalië, Albanië, Irak, Georgië, Guinee en Turkije ",1.896,15.799,20211001
+november,11,2021,2.404,"Afghanistan, Syrië en Palestina ,Eritrea, Irak, Somalië, Moldavië, Turkije, El Salvador en Georgië ",1.246,16.056,20211101
+januari,01,2022,2.665,"Afghanistan, Syrië en Palestina ,Eritrea, Guinee, de Filipijnen, Georgië, Irak, Somalië en Moldavië ",898,16.216,20220101
+februari,02,2022,2.290,"Afghanistan, Palestina en Oekraïne ,Eritrea, Syrië, Moldavië, Irak, Georgië, El Salvador en Guinee ",1.428,16.356,20220201
+maart,03,2022,3.239,"Oekraïne, Afghanistan en Palestina ,Syrië, de Democratische Republiek Congo (DRC), Eritrea, Moldavië, Turkije, Kameroen en Rusland ",1.925,16.412,20220301
+april,04,2022,2.324,"Afghanistan, Eritrea en Palestina ,Syrië, Turkije, Irak, Georgië, Moldavië, Burundi en Kameroen ",1.063,16.929,20220401
+mei,05,2022,2.556,"Afghanistan, Eritrea en Syrië ,Palestina, Turkije, Georgië, Iran, Guinee, Irak en Somalië ",1.527,17.571,20220501
+juni,06,2022,2.936,"Afghanistan, Palestina en Syrië ,Eritrea, Turkije, Moldavië, Burundi, Georgië, Iran en Guinee ",2.287,17.312,20220601
+juli,07,2022,3.042,"Afghanistan, Syrië en Burundi ,Palestina, Eritrea, Turkije, Moldavië, Georgië, Guinee en Irak ",1.809,16.593,20220701
+augustus,08,2022,3.529,"Afghanistan, Syrië en Burundi ,Eritrea, Palestina, Turkije, Somalië, Congo (DRC), Irak en Kameroen ",1.540,16.026,20220801
+september,09,2022,4.009,"Afghanistan, Burundi en Syrië ,Palestina, Turkije, Eritrea, Iran, Kameroen, Congo (DRC) en Irak ",2.006,16.793,20220901
+oktober,10,2022,4.220,"Afghanistan, Burundi en Syrië ,Turkije, Palestina, Eritrea, Iran, Moldavië, Congo (DRC) en Rusland ",2.049,17.050,20221001
+november,11,2022,3.369,"Afghanistan, Burundi en Syrië ,Palestina, Turkije, Eritrea, Iran, Georgië, Congo (DRC) en Rusland ",1.880,17.114,20221101
+januari,01,2023,2.777,"Afghanistan, Palestina en Syrië ,Eritrea, Rusland, Congo (DRC), Guinee, Turkije, Kameroen en Georgië ",1.698,17.374,20230101
+februari,02,2023,2.399,,1.804,18.390,20230201
+maart,03,2023,2.634,"Afghanistan, Palestina en Eritrea ,Syrië, Turkije, Moldavië, Congo (DRC), Somalië, Georgië en Colombia ",2.384,21.237,20230301
+april,04,2023,2.053,"Afghanistan, Palestina en Syrië ,Turkije, Eritrea, Kameroen, Guinee, Rusland, Congo (DRC) en Iran ",2.210,21.606,20230401
+mei,05,2023,2.703,"Afghanistan, Syrië en Palestina ,Eritrea, Turkije, Guinee, Kameroen, Rusland, Congo (DRC), Somalië ",2.259,21.291,20230501
+juni,06,2023,2.740,"Syrië, Afghanistan en Turkije ,Palestina, Eritrea, Congo (DRC), Burundi, Guinee, Georgië en Rusland ",2.328,22.240,20230601
+juli,07,2023,2.972,"Syrië, Afghanistan en Palestina ,Eritrea, Turkije, Guinee, Congo (DRC), Georgië, Kameroen en Somalië ",2.092,23.021,20230701
+augustus,08,2023,3.639,"Syrië, Afghanistan en Palestina ,Turkije, Eritrea, Guinee, Congo (DRC), Kameroen, Georgië en Somalië ",1.822,23.061,20230801
+september,09,2023,3.234,"Syrië, Afghanistan en Turkije ,Palestina, Guinee,  Kameroen, Eritrea, Congo (DRC), Rusland en Moldavië ",2.230,23.587,20230901
+oktober,10,2023,3.638,"Syrië, Turkije en Palestina ,Afghanistan, Eritrea,  Kameroen, Congo (DRC), Guinee, Moldavië en Rusland ",2.348,23.908,20231001
+november,11,2023,3.223,"Syrië, Palestina en Turkije ,Afghanistan, Eritrea,  Moldavië, Kameroen, Guinee, Georgië en Congo (DRC) ",1.888,24.764,20231101
+januari,01,2024,3.106,"Syrië, Palestina en Afghanistan ,Eritrea, Guinee, Kameroen, Turkije, Congo (DRC), Irak en Moldavië ",1.948,26.586,20240101
+februari,02,2024,2.762,"Syrië, Palestina en Afghanistan ,Congo (DRC), Turkije, Eritrea, Guinee, Moldavië, Kameroen en Irak ",2.265,27.702,20240201
+maart,03,2024,2.667,"Palestina, Syrië en Afghanistan ,Eritrea, Turkije, Burundi, Guinee, Georgië, Kameroen en Congo (DRC) ",2.362,27.842,20240301
+april,04,2024,3.095,"Palestina, Syrië en Afghanistan ,Eritrea, Turkije, Congo (DRC), Moldavië, Guinee, Burundi en Kameroen ",2.174,28.554,20240401
+mei,05,2024,3.256,"Syrië, Palestina en Afghanistan ,Eritrea, Turkije, Kameroen, Congo (DRC), Somalië, Moldavië en Burundi ",,27.953,20240501
+juni,06,2024,2.694,"Palestina, Syrië en Eritrea ,Afghanistan, Turkije, Georgië, Guinee, de Democratische Republiek Congo (DRC), Kameroen en Burundi ",2.639,27.824,20240601
+juli,07,2024,3.441,"Syrië, Palestina en Afghanistan ,Congo (DRC), Turkije, Eritrea, Guinee, Kameroen, Burundi en Georgië ",2.573,27.827,20240701
+augustus,08,2024,3.337,"Syrië, Palestina en Afghanistan ,Congo (DRC), Eritrea, Turkije, Kameroen, Somalië, Guinee en Burundi ",2.092,27.330,20240801
+september,09,2024,3.686,"Syrië, Palestina en Afghanistan ,Turkije, Eritrea, Congo (DRC), Burundi, Moldavië, Kameroen en Guinee ",2.340,27.507,20240901
+oktober,10,2024,4.323,"Syrië, Palestina en Afghanistan ,Turkije, Congo (DRC), Eritrea, Guinee, Georgië, Burundi en Kameroen ",2.763,26.863,20241001
+november,11,2024,3.236,"Palestina, Syrië en Afghanistan ,Congo (DRC), Turkije, Eritrea, Guinee, Kameroen, Georgië en Colombia ",1.987,26.362,20241101
+januari,01,2025,3.540,"Palestina, Afghanistan en Congo (DRC) ,Turkije, Syrië, Kameroen, Guinee, Moldavië, Burundi en Eritrea ",1.898,26.079,20250101
+februari,02,2025,3.063,"Afghanistan, Palestina en Congo (DRC) ,Syrië, Moldavië, Turkije, Guinee, Kameroen, Burundi en Eritrea ",2.257,25.917,20250201
+maart,03,2025,2.569,"Afghanistan, Congo (DRC) en Palestina ,Turkije, Eritrea, Burundi, Guinee, Syrië, Kameroen en Georgië ",2.130,25.907,20250301
+april,04,2025,2.834,"Afghanistan, Palestina en Congo (DRC) ,Turkije, Eritrea, Syrië, Burundi, Guinee, Kameroen en Somalië ",2.348,25.883,20250401
+mei,05,2025,2.496,,2.023,25.747,20250501
+juni,06,2025,3.004,"Eritrea, Afghanistan en Palestina ,Congo (DRC), Turkije,   Burundi, Guinee, Syrië, Kameroen en Georgië ",2.248,25.550,20250601
+juli,07,2025,3.269,"Afghanistan, Eritrea en Palestina ,Turkije, Congo (DRC),    Burundi, Syrië, Guinee, Kameroen en Moldavië ",2.138,25.281,20250701
+augustus,08,2025,2.895,"Afghanistan, Congo (DRC) en Palestina ,Eritrea, Turkije, Burundi, Syrië, Kameroen, Guinee en Georgië ",1.819,24.600,20250801
