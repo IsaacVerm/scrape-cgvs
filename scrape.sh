@@ -34,7 +34,7 @@ for YEAR in {2020..2025}; do
         # extract values from page
         COUNT_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/.*registreerde de DVZ.<strong>([0-9]*(\.[0-9]*)?).*/\1/p')
         TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/<li>([A-Z].*)staan in .* bovenaan de top 10.*\. (.*)vervolledigen de top 10.*/"\1,\2"/p')
-        COUNT_CGVS_DECISIONS=$(echo "$HTML_CONTENT" | sed -En 's/.*<strong>([0-9]*(\.[0-9]*)?)( )?<\/strong>( )?beslissingen.*/\1/p')
+        COUNT_CGVS_DECISIONS=$(echo "$HTML_CONTENT" | sed -En 's/.*<strong>([0-9]*(\.[0-9]*)?)( )?<\/strong>( )?beslissingen.*/\1/p') # https://www.cgvs.be/nl/actueel/asielstatistieken-mei-2024 I wasn't able to match May 2024 data
                 
         # save extracted values to CSV
         # make sure you output as many values as columns put in the header of the empty CSV above
