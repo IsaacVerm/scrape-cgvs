@@ -2,7 +2,7 @@
 
 # setup
 OUTPUT_FILE="test.csv"
-MONTHS=("januari" "februari" "maart" "april" "mei" "juni" "juli" "augustus" "september" "oktober" "november" "december")
+MONTHS=("januari" "februari" "maart" "april" "mei" "juni" "juli" "augustus" "september" "oktober" "november") # no december because the december report summarises the entire year
 
 # create empty CSV file with just a header if file doesn't exist
 if [ ! -f "$OUTPUT_FILE" ]; then
@@ -11,9 +11,9 @@ fi
 
 # fetch page each month, extract required values and output the result to CSV
 for YEAR in {2020..2025}; do
-    for MONTH_INDEX in {0..11}; do
-        # wait for 2 seconds (asked for by CGVS at https://www.cgvs.be/robots.txt)
-        sleep 2
+    for MONTH_INDEX in {0..10}; do
+        # wait for 3 seconds (CGVS asks for 2 seconds at https://www.cgvs.be/robots.txt)
+        sleep 5
 
         # select month name in Dutch
         MONTH="${MONTHS[$MONTH_INDEX]}"
@@ -34,7 +34,7 @@ for YEAR in {2020..2025}; do
         # extract values from page
         COUNT_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/.*registreerde de DVZ.<strong>([0-9]*(\.[0-9]*)?).*/\1/p')
         TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/<li>([A-Z].*)staan in .* bovenaan de top 10.*\. (.*)vervolledigen de top 10.*/"\1,\2"/p')
-        COUNT_CGVS_DECISIONS=$(echo "$HTML_CONTENT" | sed -En 's/.*In .* nam het CGVS <strong>([0-9]*(\.[0-9]*)?) <\/strong>beslissingen.*/\1/p')
+        COUNT_CGVS_DECISIONS=$(echo "$HTML_CONTENT" | sed -En 's/.*<strong>([0-9]*(\.[0-9]*)?)( )?<\/strong>( )?beslissingen.*/\1/p')
                 
         # save extracted values to CSV
         # make sure you output as many values as columns put in the header of the empty CSV above
