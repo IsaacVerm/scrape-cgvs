@@ -9,11 +9,26 @@ if [ ! -f "$OUTPUT_FILE" ]; then
     echo "month,year,count_applicants_international_protection,top_10_nationalities_applicants_international_protection,count_cgvs_decisions,workload" > "$OUTPUT_FILE"
 fi
 
-# fetch page each month, extract required values and output the result to CSV
-for YEAR in {2020..2025}; do
+# fetch pages (by month and summary), extract required values and output the result to CSV
+for YEAR in {2021..2025}; do
+    # wait for 3 seconds (CGVS asks for 2 seconds at https://www.cgvs.be/robots.txt)
+    sleep 3
+
+    # create dynamic URL
+    SUMMARY_URL="https://www.cgvs.be/nl/actueel/asielstatistieken-overzicht-${YEAR}"
+
+    # fetch page
+    HTML_CONTENT=$(curl -s "$SUMMARY_URL")
+
+    # extract values from page
+    COUNT_APPLICANTS_INTERNATIONAL_PROTECTION=$(echo "$HTML_CONTENT" | sed -En 's/.*dienden <strong>([0-9]*(\.[0-9]*)?) personen een verzoek om internationale bescherming.*/\1/p')
+
+    # save extracted values to CSV
+    echo " ,${YEAR},${COUNT_APPLICANTS_INTERNATIONAL_PROTECTION}, , , " >> "$OUTPUT_FILE"
+
     for MONTH_INDEX in {0..10}; do
-        # wait for 3 seconds (CGVS asks for 2 seconds at https://www.cgvs.be/robots.txt)
-        sleep 5
+        # wait respecting robots.txt
+        sleep 3
 
         # select month name in Dutch
         MONTH="${MONTHS[$MONTH_INDEX]}"
