@@ -5,7 +5,7 @@ import re
 import requests
 import pandas as pd
 
-OUTPUT_FILE = "test.csv"
+OUTPUT_FILE = "test_py.csv"
 MONTHS = [
     "januari", "februari", "maart", "april", "mei", "juni",
     "juli", "augustus", "september", "oktober", "november"
@@ -50,22 +50,22 @@ for YEAR in range(2020, 2026):
 
         # extract values from page
         COUNT_APPLICANTS_INTERNATIONAL_PROTECTION = ""
-        m = re.search(r'.*registreerde de DVZ.<strong>([0-9]*(\.[0-9]*)?).*', HTML_CONTENT, re.S)
+        m = re.search(r'.*registreerde de DVZ.<strong>([0-9]*(\.[0-9]*)?).*', HTML_CONTENT)
         if m:
             COUNT_APPLICANTS_INTERNATIONAL_PROTECTION = m.group(1)
 
         TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION = ""
-        m = re.search(r'<li>([A-Z].*)staan in .* bovenaan de top 10.*\. (.*)vervolledigen de top 10.*', HTML_CONTENT, re.S)
+        m = re.search(r'<li>([A-Z].*)staan in .* bovenaan de top 10.*\. (.*)vervolledigen de top 10.*', HTML_CONTENT)
         if m:
             TOP_10_NATIONALITIES_APPLICANTS_INTERNATIONAL_PROTECTION = f'"{m.group(1)},{m.group(2)}"'
 
         COUNT_CGVS_DECISIONS = ""
-        m = re.search(r'.*<strong>([0-9]*(\.[0-9]*)?)( )?<\/strong>( )?beslissingen.*', HTML_CONTENT, re.S)
+        m = re.search(r'.*<strong>([0-9]*(\.[0-9]*)?)( )?<\/strong>( )?beslissingen.*', HTML_CONTENT)
         if m:
             COUNT_CGVS_DECISIONS = m.group(1)
 
         WORKLOAD = ""
-        m = re.search(r'.*bedroeg de totale werklast <strong>([0-9]*(\.[0-9]*)?).*', HTML_CONTENT, re.S)
+        m = re.search(r'.*bedroeg de totale werklast <strong>([0-9]*(\.[0-9]*)?).*', HTML_CONTENT)
         if m:
             WORKLOAD = m.group(1)
 
